@@ -5,12 +5,28 @@ Get-AppxPackage -AllUSers | Select Name, PackageFullName
 ### List of the programs that will be removed from the OS 
 $appsToRemove = @(
   "*Microsoft.MicrosoftSolitaireCollection*"
-
-
-
+  "*Microsoft.SkypeApp*"
+  "*Microsoft.XboxApp*"
+  "*Microsoft.WindowsMaps*"
+  "*Microsoft.BingNews*"
+  "*Microsoft.WindowsCamera*"
+  "*Microsoft.XboxApp*"
+  "*Microsoft.ZuneMusic*"
+  "*Microsoft.ZuneVideo*"
+  "*Microsoft.BingWeather*"
+  "*Microsoft.Office.OneNote*"
+  "*Microsoft.MicrosoftStickyNotes*"
+  "*Microsoft.GetStarted*"
+  "*Microsoft.OfficeHub*"
+  "*Microsoft.OneConnect*"
+  "*Microsoft.People*"
+  "*Microsoft.WindowsSoundRecorder*"
+  "*Microsoft.BingSports*"
+  "*Microsoft.BingFinance*"
+  "*Microsoft.3DViewer*"
 )
 
-#
+#Check the list and remove all instances of it from all user accounts
 foreach($app in $appsToRemove) {
   $packages = Get-AppxPackage - Name $app -AllUSers
   foreach ($package in $packages) {
