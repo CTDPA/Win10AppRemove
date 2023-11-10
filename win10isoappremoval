@@ -1,6 +1,5 @@
 ### List of the programs that are present in the OS
 ### run this command separately and check against the below list
-
 Get-AppxPackage -AllUsers | Select Name, PackageFullName
 
 ### List of the programs that will be removed from the OS 
