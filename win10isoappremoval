@@ -1,0 +1,20 @@
+### List of the programs that are present in the OS
+### run this command separately and check against the below list
+Get-AppxPackage -AllUSers | Select Name, PackageFullName
+
+### List of the programs that will be removed from the OS 
+$appsToRemove = @(
+  "*Microsoft.MicrosoftSolitaireCollection*"
+
+
+
+)
+
+#
+foreach($app in $appsToRemove) {
+  $packages = Get-AppxPackage - Name $app -AllUSers
+  foreach ($package in $packages) {
+    Remove-AppxPackage -Package $package.PackageFullName
+  }
+}
+
